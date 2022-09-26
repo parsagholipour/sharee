@@ -1,0 +1,83 @@
+.sharee__fixed {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    transition: 300ms all;
+    border-start-end-radius: 5px;
+    border-end-end-radius: 5px;
+    --border-radius: 5px;
+}
+
+.sharee__fixed.sharee__position__top-right {
+    right: 0;
+    top: 10vh;
+}
+
+.sharee__fixed.sharee__position__top-left {
+    left: 0;
+    top: 10vh;
+    direction: ltr!important;
+}
+
+.sharee__fixed.sharee__position__bottom-left {
+    left: 0;
+    bottom: 10vh;
+    direction: ltr!important;
+}
+
+.sharee__fixed.sharee__position__bottom-right {
+    bottom: 10vh;
+    right: 0;
+}
+
+
+.sharee__fixed svg {
+    width: 1.9em;
+    max-height: 1.9em;
+    vertical-align: middle;
+}
+
+.sharee__fixed.sharee__rtl {
+    direction: rtl;
+}
+
+.sharee__fixed > * {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: white;
+    padding-inline-start: 2px;
+    padding-inline-end: 9px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    max-width: 1.58em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sharee__fixed > *:not(.sharee__no-title):hover {
+    max-width: 10em;
+}
+
+.sharee__fixed > * > *:first-child {
+    margin-inline-end: 0.3em;
+}
+
+.sharee__fixed > *:hover {
+    background: #ebebeb;
+}
+
+.sharee__fixed > *:not(.sharee__no-title):hover {
+    border-start-end-radius: var(--border-radius);
+    border-end-end-radius: var(--border-radius);
+}
+
+.sharee__fixed > *:first-child {
+    border-start-end-radius: var(--border-radius);
+}
+
+.sharee__fixed > *:last-child {
+    border-end-end-radius: var(--border-radius);
+}
