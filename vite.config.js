@@ -15,7 +15,7 @@ export default defineConfig({
     },
     rollupOptions: {
       input: {
-        'sharee.js': resolve(__dirname, 'src/build.ts'),
+        'sharee': resolve(__dirname, 'src/build.ts'),
         'sharee-vue.js': resolve(__dirname, 'src/vue/Sharee.vue'),
         'sharee-react.js': resolve(__dirname, 'src/react/Sharee.tsx')
       },

@@ -2,6 +2,7 @@
   "name": "sharee",
   "private": false,
   "version": "1.0.6",
+  "browser": "./dist/sharee.min.js",
   "main": "./dist/build.js",
   "module": "./dist/build.js",
   "types": "./src/lib/main.d.ts",
