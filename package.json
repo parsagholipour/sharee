@@ -1,8 +1,9 @@
 {
   "name": "sharee",
   "private": false,
-  "version": "1.0.1",
-  "main": "./dist/src/build.js",
+  "version": "1.0.6",
+  "main": "./dist/build.js",
+  "module": "./dist/build.js",
   "types": "./src/lib/main.d.ts",
   "type": "module",
   "scripts": {
@@ -11,9 +12,10 @@
     "preview": "vite preview"
   },
   "exports": {
-    ".": "./dist/src/build.js",
-    "./vue": "./dist/src/vue/Sharee.js",
-    "./react": "./dist/src/react/Sharee.js"
+    ".": "./dist/sharee.js",
+    "./vue": "./dist/sharee-vue.js",
+    "./react": "./dist/sharee-react.js",
+    "./styles": "./dist/style.css"
   },
   "devDependencies": {
     "@types/lodash.merge": "^4.6.7",

@@ -14,11 +14,15 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
+      input: {
+        'sharee.js': resolve(__dirname, 'src/build.ts'),
+        'sharee-vue.js': resolve(__dirname, 'src/vue/Sharee.vue'),
+        'sharee-react.js': resolve(__dirname, 'src/react/Sharee.tsx')
+      },
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', 'react', 'react-dom', 'react-scripts', 'ripple-effects', '@types/react', '@types/react-dom'],
+      external: ['vue', 'react', 'react-dom', 'ripple-effects', 'lodash.merge', 'react/jsx-runtime', '@vitejs/plugin-react'],
       output: {
-        preserveModules: true,
         entryFileNames: ({ name: fileName }) => {
           return `${fileName}.js`
         },

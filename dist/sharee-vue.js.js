@@ -1,6 +1,7 @@
-import { defineComponent as a, ref as r, onMounted as u, onUnmounted as s, openBlock as p, createElementBlock as c } from "vue";
-import i from "../lib/Sharee.js";
-const f = /* @__PURE__ */ a({
+import { defineComponent as a, ref as r, onMounted as s, onUnmounted as u, openBlock as p, createElementBlock as i } from "vue";
+import { S as c } from "./Sharee.e2d7a306.js";
+import "lodash.merge";
+const _ = /* @__PURE__ */ a({
   __name: "Sharee",
   props: {
     lang: null,
@@ -18,17 +19,17 @@ const f = /* @__PURE__ */ a({
     const n = t;
     console.log(n);
     const l = r(null), o = r(null);
-    return u(() => {
-      o.value = new i(l.value, n);
-    }), s(() => {
+    return s(() => {
+      o.value = new c(l.value, n);
+    }), u(() => {
       var e;
       (e = o.value) == null || e.destroy();
-    }), (e, m) => (p(), c("div", {
+    }), (e, m) => (p(), i("div", {
       ref_key: "shareeEl",
       ref: l
     }, null, 512));
   }
 });
 export {
-  f as default
+  _ as default
 };
