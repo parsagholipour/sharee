@@ -1,7 +1,7 @@
 {
   "name": "sharee",
   "private": false,
-  "version": "1.0.8",
+  "version": "1.0.9",
   "browser": "./dist/sharee.min.js",
   "main": "./dist/build.js",
   "module": "./dist/build.js",
