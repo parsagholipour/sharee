@@ -16,6 +16,7 @@
 .sharee__fixed.sharee__position__top-right {
     right: 0;
     top: 10vh;
+    direction: rtl!important;
 }
 
 .sharee__fixed.sharee__position__top-left {
