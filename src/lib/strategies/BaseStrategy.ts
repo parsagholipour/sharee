@@ -2,7 +2,6 @@ import Sharee from "../Sharee";
 import Lang from "../../common/Lang";
 import DriverOptions from "../../common/DriverOptions";
 import Driver from "../drivers/Driver";
-import drivers from '../drivers'
 
 export default abstract class BaseStrategy {
   public abstract render(): void;
@@ -12,9 +11,10 @@ export default abstract class BaseStrategy {
 
   protected resolveDriver(driverName: string):
     (new (lang: Lang, options: DriverOptions) => Driver) {
-    if (drivers.hasOwnProperty(driverName)) {
+    console.log(Sharee.drivers)
+    if (Sharee.drivers.hasOwnProperty(driverName)) {
       // @ts-ignore
-      return drivers[driverName]
+      return Sharee.drivers[driverName]
     } else {
       throw new Error(`Unknown driver: ${driverName}`)
     }

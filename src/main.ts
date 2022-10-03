@@ -2,6 +2,7 @@ import './style.css'
 import Sharee from "./lib/Sharee";
 import initVue from './vue/main';
 import initReact from './react/main';
+import TelegramDriver from "./lib/drivers/TelegramDriver";
 
 if (document.location.pathname === '/vue') {
   initVue()
@@ -30,10 +31,11 @@ if (document.location.pathname === '/vue') {
     </div>
   </div>
 `
-
+  Sharee.addDriver('tel', TelegramDriver)
   new Sharee(document.querySelector('#sharee')!, {
     mode: 'dropdown',
-    lang: 'fa'
+    lang: 'fa',
+    drivers: ['tel']
   })
 
   new Sharee(document.querySelector('#sharee-text')!, {

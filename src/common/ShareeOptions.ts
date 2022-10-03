@@ -10,7 +10,7 @@ export default interface ShareeOptions {
   shareLink?: string;
   shareText?: string;
   ripple?: boolean;
-  mode?: 'dropdown'|'dropdownRow'|'dropdownGrid'|'text'|'normal'|'fixed';
+  mode?: 'dropdown'|'text'|'normal'|'fixed';
   modeOptions?: any
 }
 

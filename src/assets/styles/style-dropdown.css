@@ -47,6 +47,10 @@
     min-height: 2.6em;
 }
 
+.sharee__dropdown:not(.sharee__dropdown__row) > *:first-child:last-child {
+    border-radius: inherit;
+}
+
 .sharee__dropdown:not(.sharee__dropdown__row) > *:first-child:not(:last-child) {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
 }

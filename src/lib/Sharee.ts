@@ -6,16 +6,21 @@ import BaseStrategy from "./strategies/BaseStrategy";
 import strategies from "./strategies";
 import merge from 'lodash.merge'
 import '../assets/styles/style.css'
+import drivers from './drivers'
+import Driver from "./drivers/Driver";
 
 export default class Sharee {
   public options: ShareeOptions;
   public lang: Lang = fa as Lang;
   protected strategy: BaseStrategy;
   public targetElement: HTMLElement;
+  public static drivers = {...drivers};
+
 
   constructor(element: HTMLElement, options: ShareeOptions = shareeDefaultOptions) {
     this.targetElement = element;
     this.options = merge({}, shareeDefaultOptions, options);
+    this.options.drivers = options.drivers || this.options.drivers // Shouldn't merge drivers
     // @ts-ignore
     const strategyClass: new(sharee: Sharee) => BaseStrategy = strategies[this.options.mode!]
     if (typeof strategyClass === 'undefined') {
@@ -25,6 +30,11 @@ export default class Sharee {
     this.init().then(() => {
       this.strategy.render()
     });
+  }
+
+  public static addDriver(driverName: string, driver: typeof Driver) {
+    // @ts-ignore
+    this.drivers[driverName] = driver
   }
 
   protected async init() {
