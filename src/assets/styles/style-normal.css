@@ -8,6 +8,10 @@
     border: none;
 }
 
+.sharee__normal a[href] {
+    text-decoration: none;
+}
+
 .sharee__normal svg {
     width: 1.9em;
     max-height: 1.9em;

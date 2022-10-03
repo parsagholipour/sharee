@@ -9,6 +9,10 @@
     --border-radius: 5px;
 }
 
+.sharee__fixed a[href] {
+    text-decoration: none;
+}
+
 .sharee__fixed.sharee__position__top-right {
     right: 0;
     top: 10vh;
