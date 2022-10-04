@@ -34,7 +34,7 @@
 .sharee__fixed.sharee__position__bottom-right {
     bottom: 10vh;
     right: 0;
-    direction: ltr!important;
+    direction: rtl!important;
 }
 
 
