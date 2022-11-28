@@ -31,7 +31,7 @@ const p = {
   Facebook: x,
   default: c
 }, Symbol.toStringTag, { value: "Module" }));
-class u {
+class d {
   constructor() {
     n(this, "eventListeners", []);
   }
@@ -48,7 +48,7 @@ const b = {
   type: "column",
   animation: "fade-down"
 };
-class d extends u {
+class u extends d {
   constructor(e) {
     super();
     n(this, "sharee");
@@ -167,7 +167,7 @@ function m(o, s) {
   } while (o);
   return !1;
 }
-class _ extends d {
+class _ extends u {
   constructor(s) {
     super(s), this.options.type = "row";
   }
@@ -244,7 +244,7 @@ class _ extends d {
 const M = {
   noTitle: !1
 };
-class H extends u {
+class H extends d {
   constructor(e) {
     super();
     n(this, "sharee");
@@ -320,7 +320,7 @@ const S = {
   position: "top-right",
   noTitle: !1
 };
-class O extends u {
+class O extends d {
   constructor(e) {
     super();
     n(this, "sharee");
@@ -390,7 +390,7 @@ class O extends u {
     return i.innerHTML = e.getButtonText(), e.mainEl.appendChild(t), this.options.noTitle ? (e.mainEl.title = e.getButtonText(), e.mainEl.classList.add("sharee__no-title")) : e.mainEl.appendChild(i), e.mainEl.classList.add("sharee__driver__" + e.getName()), e.mainEl;
   }
 }
-class z extends d {
+class z extends u {
   constructor(s) {
     super(s), this.options.type = "row";
   }
@@ -419,7 +419,7 @@ class z extends d {
   }
 }
 const R = {
-  dropdown: d,
+  dropdown: u,
   text: _,
   normal: H,
   fixed: O,
@@ -613,7 +613,7 @@ class h {
     const t = R[this.options.mode];
     if (typeof t > "u")
       throw new Error('Selected mode "' + e.mode + '" not found');
-    this.strategy = new t(this), this.init().then(() => {
+    this.strategy = new t(this), typeof window > "u" && this.init().then(() => {
       this.strategy.render();
     });
   }
