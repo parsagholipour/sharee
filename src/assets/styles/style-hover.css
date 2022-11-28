@@ -1,0 +1,11 @@
+.sharee__hover {
+    transform: translate(-50%, 0);
+}
+
+.sharee__dropdown.fade-down.sharee__hover.show {
+    transform: translate(-50%, 0);
+}
+
+.sharee__dropdown.fade-down:not(.show) {
+    transform: translate(-50%, -10px);
+}

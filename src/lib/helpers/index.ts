@@ -1,6 +1,6 @@
 export function hasClass(element: any, className: string) {
   do {
-    if (element?.className?.includes(className)) {
+    if (typeof element?.className?.includes !== 'undefined' && element?.className?.includes(className)) {
       return true;
     }
     element = element.parentNode;

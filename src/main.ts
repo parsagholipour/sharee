@@ -19,6 +19,10 @@ if (document.location.pathname === '/vue') {
       <div><div id="sharee-normal"></div></div>
     </div>
     <div>
+      <h2>Hover Button</h2>
+      <div><button id="sharee-hover" class="transition-all duration-300 bg-app-light-blue-10 hover:bg-app-light-blue-9 text-white rounded-lg font-300 p-1.7 sm:p-2" data-v-e56f4d16=""><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.5 22.5C20.1569 22.5 21.5 21.1569 21.5 19.5C21.5 17.8431 20.1569 16.5 18.5 16.5C16.8431 16.5 15.5 17.8431 15.5 19.5C15.5 21.1569 16.8431 22.5 18.5 22.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6.5 15.5C8.15685 15.5 9.5 14.1569 9.5 12.5C9.5 10.8431 8.15685 9.5 6.5 9.5C4.84315 9.5 3.5 10.8431 3.5 12.5C3.5 14.1569 4.84315 15.5 6.5 15.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.09 14.01L15.92 17.99" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M18.5 8.5C20.1569 8.5 21.5 7.15685 21.5 5.5C21.5 3.84315 20.1569 2.5 18.5 2.5C16.8431 2.5 15.5 3.84315 15.5 5.5C15.5 7.15685 16.8431 8.5 18.5 8.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.91 7.01001L9.09 10.99" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div>
+    </div>
+    <div>
       <h2>Normal without title</h2>
       <div><div id="sharee-normal-no-title"></div></div>
     </div>
@@ -68,6 +72,11 @@ if (document.location.pathname === '/vue') {
 
   new Sharee(document.querySelector('#sharee-normal')!, {
     mode: 'normal',
+    lang: 'en'
+  });
+
+  new Sharee(document.querySelector('#sharee-hover')!, {
+    mode: 'hover',
     lang: 'en'
   });
 

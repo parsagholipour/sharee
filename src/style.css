@@ -92,3 +92,17 @@ button:focus-visible {
   }
 }
 
+
+/*! CSS Used from: Embedded */
+svg{display:block;vertical-align:middle;}
+.bg-app-light-blue-10{--tw-bg-opacity:1;background-color:rgba(0, 122, 255, var(--tw-bg-opacity));}
+.hover\:bg-app-light-blue-9:hover{--tw-bg-opacity:1;background-color:rgba(36, 141, 255, var(--tw-bg-opacity));}
+.rounded-lg{border-radius:0.5rem;}
+.font-300{font-weight:300;}
+.p-1\.7{padding:0.425rem;}
+.text-white{--tw-text-opacity:1;color:rgba(255, 255, 255, var(--tw-text-opacity));}
+.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
+.duration-300{transition-duration:300ms;}
+@media (min-width: 640px){
+  .sm\:p-2{padding:0.5rem;}
+}

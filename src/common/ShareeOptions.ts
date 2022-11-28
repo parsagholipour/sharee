@@ -10,8 +10,8 @@ export default interface ShareeOptions {
   shareLink?: string;
   shareText?: string;
   ripple?: boolean;
-  mode?: 'dropdown'|'text'|'normal'|'fixed';
-  modeOptions?: any
+  mode?: 'dropdown'|'text'|'normal'|'fixed'|'hover';
+  modeOptions?: any;
 }
 
 const shareeDefaultOptions: ShareeOptions = {
