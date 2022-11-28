@@ -27,9 +27,11 @@ export default class Sharee {
       throw new Error('Selected mode \"' + options.mode + '\" not found')
     }
     this.strategy = new strategyClass(this);
-    this.init().then(() => {
-      this.strategy.render()
-    });
+    if (typeof window !== 'undefined') {
+      this.init().then(() => {
+        this.strategy.render()
+      });
+    }
   }
 
   public static addDriver(driverName: string, driver: typeof Driver) {
