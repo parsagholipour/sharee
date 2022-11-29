@@ -11,7 +11,6 @@ export default abstract class BaseStrategy {
 
   protected resolveDriver(driverName: string):
     (new (lang: Lang, options: DriverOptions) => Driver) {
-    console.log(Sharee.drivers)
     if (Sharee.drivers.hasOwnProperty(driverName)) {
       // @ts-ignore
       return Sharee.drivers[driverName]

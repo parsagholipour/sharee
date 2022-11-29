@@ -105,7 +105,7 @@ export default class DropdownStrategy extends BaseStrategy{
     this.eventListeners.forEach(e => {
       e[0].removeEventListener(e[1], e[2])
     })
-    this.shareeEl.parentElement!.removeChild(this.shareeEl)
+    this.shareeEl.parentElement?.removeChild(this.shareeEl)
   }
 
   public reRender() {

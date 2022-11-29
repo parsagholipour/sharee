@@ -1,5 +1,5 @@
-import { defineComponent as a, ref as r, onMounted as s, onUnmounted as u, openBlock as p, createElementBlock as i } from "vue";
-import { S as c } from "./Sharee.1b963f5d.js";
+import { defineComponent as a, ref as o, onMounted as u, onUnmounted as s, openBlock as p, createElementBlock as i } from "vue";
+import { S as m } from "./Sharee.533a3269.js";
 import "lodash.merge";
 const _ = /* @__PURE__ */ a({
   __name: "Sharee",
@@ -15,18 +15,16 @@ const _ = /* @__PURE__ */ a({
     mode: null,
     modeOptions: null
   },
-  setup(t) {
-    const n = t;
-    console.log(n);
-    const l = r(null), o = r(null);
-    return s(() => {
-      o.value = new c(l.value, n);
-    }), u(() => {
+  setup(r) {
+    const t = r, n = o(null), l = o(null);
+    return u(() => {
+      l.value = new m(n.value, t);
+    }), s(() => {
       var e;
-      (e = o.value) == null || e.destroy();
-    }), (e, m) => (p(), i("div", {
+      (e = l.value) == null || e.destroy();
+    }), (e, c) => (p(), i("div", {
       ref_key: "shareeEl",
-      ref: l
+      ref: n
     }, null, 512));
   }
 });

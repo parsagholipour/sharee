@@ -10,7 +10,7 @@ const p = {
   drivers: ["copy", "telegram", "facebook", "whatsapp", "twitter", "linkedin"],
   ripple: !0,
   mode: "normal"
-}, E = "rtl", g = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0644\u06AF\u0631\u0627\u0645", f = "\u06A9\u067E\u06CC \u0644\u06CC\u0646\u06A9", C = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u06A9\u067E\u06CC \u0634\u062F!", L = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0648\u0627\u062A\u0633\u0627\u067E", v = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0648\u06CC\u06CC\u062A\u0631", w = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0644\u06CC\u0646\u06A9\u062F\u06CC\u0646", x = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0641\u06CC\u0633\u0628\u0648\u06A9", c = {
+}, E = "rtl", g = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0644\u06AF\u0631\u0627\u0645", f = "\u06A9\u067E\u06CC \u0644\u06CC\u0646\u06A9", C = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u06A9\u067E\u06CC \u0634\u062F!", L = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0648\u0627\u062A\u0633\u0627\u067E", v = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0648\u06CC\u06CC\u062A\u0631", w = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0644\u06CC\u0646\u06A9\u062F\u06CC\u0646", x = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0641\u06CC\u0633\u0628\u0648\u06A9", h = {
   Direction: E,
   Telegram: g,
   Copy_Link: f,
@@ -29,15 +29,15 @@ const p = {
   Twitter: v,
   Linkedin: w,
   Facebook: x,
-  default: c
+  default: h
 }, Symbol.toStringTag, { value: "Module" }));
 class d {
   constructor() {
     n(this, "eventListeners", []);
   }
   resolveDriver(s) {
-    if (console.log(h.drivers), h.drivers.hasOwnProperty(s))
-      return h.drivers[s];
+    if (c.drivers.hasOwnProperty(s))
+      return c.drivers[s];
     throw new Error(`Unknown driver: ${s}`);
   }
   shouldRenderDriver(s) {
@@ -96,9 +96,10 @@ class u extends d {
     this.sharee.targetElement.addEventListener("mouseenter", e), this.sharee.targetElement.addEventListener("mouseleave", t), this.eventListeners.push([this.sharee.targetElement, "mouseenter", e]), this.eventListeners.push([this.sharee.targetElement, "mouseleave", t]);
   }
   destroy() {
-    window.shareeEl = this.shareeEl, this.eventListeners.forEach((e) => {
-      e[0].removeEventListener(e[1], e[2]);
-    }), this.shareeEl.parentElement.removeChild(this.shareeEl);
+    var e;
+    window.shareeEl = this.shareeEl, this.eventListeners.forEach((t) => {
+      t[0].removeEventListener(t[1], t[2]);
+    }), (e = this.shareeEl.parentElement) == null || e.removeChild(this.shareeEl);
   }
   reRender() {
     this.destroy(), setTimeout(() => {
@@ -264,9 +265,10 @@ class H extends d {
     }, Number.parseInt(this.sharee.options.showTransitionDuration));
   }
   destroy() {
-    this.eventListeners.forEach((e) => {
-      e[0].removeEventListener(e[1], e[2]);
-    }), this.shareeEl.parentElement.removeChild(this.shareeEl);
+    var e;
+    this.eventListeners.forEach((t) => {
+      t[0].removeEventListener(t[1], t[2]);
+    }), (e = this.shareeEl.parentElement) == null || e.removeChild(this.shareeEl);
   }
   reRender() {
     this.destroy(), setTimeout(() => {
@@ -330,9 +332,10 @@ class O extends d {
     this.sharee = e, this.shareeEl = document.createElement("div"), this.options = l({}, S, e.options.modeOptions);
   }
   destroy() {
-    window.shareeEl = this.shareeEl, console.log(this.shareeEl), this.eventListeners.forEach((e) => {
-      e[0].removeEventListener(e[1], e[2]);
-    }), this.shareeEl.parentElement.removeChild(this.shareeEl);
+    var e;
+    window.shareeEl = this.shareeEl, this.eventListeners.forEach((t) => {
+      t[0].removeEventListener(t[1], t[2]);
+    }), (e = this.shareeEl.parentElement) == null || e.removeChild(this.shareeEl);
   }
   reRender() {
     this.destroy(), setTimeout(() => {
@@ -603,10 +606,10 @@ const q = new Object({
   linkedin: U,
   facebook: X
 });
-class h {
+class c {
   constructor(s, e = p) {
     n(this, "options");
-    n(this, "lang", c);
+    n(this, "lang", h);
     n(this, "strategy");
     n(this, "targetElement");
     this.targetElement = s, this.options = l({}, p, e), this.options.drivers = e.drivers || this.options.drivers;
@@ -625,7 +628,7 @@ class h {
   }
   async setLang(s, e = {}) {
     const t = /* @__PURE__ */ Object.assign({ "../locales/en.json": () => import("./en.7ffedfe0.js"), "../locales/fa.json": () => Promise.resolve().then(() => D) });
-    let i = c;
+    let i = h;
     for (const r in t)
       r.includes(s) && (t[r] instanceof Function ? i = { ...await t[r]() } : i = { ...t[r] }, e[s] && l(i, e[s]));
     this.lang = i;
@@ -640,7 +643,7 @@ class h {
     this.strategy.destroy();
   }
 }
-n(h, "drivers", { ...q });
+n(c, "drivers", { ...q });
 export {
-  h as S
+  c as S
 };

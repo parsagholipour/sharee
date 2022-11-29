@@ -18,7 +18,6 @@ interface ShareeOptions {
 }
 
 const props = defineProps<ShareeOptions>()
-console.log(props)
 const shareeEl = ref<HTMLElement | null>(null)
 const sharee = ref<Sharee | null>(null)
 
