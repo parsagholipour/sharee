@@ -4,6 +4,7 @@ import CopyDriver from "./CopyDriver";
 import TwitterDriver from "./TwitterDriver";
 import LinkedinDriver from "./LinkedinDriver";
 import FacebookDriver from "./FacebookDriver";
+import EitaaDriver from "./EitaaDriver";
 
 export default new Object({
   telegram: TelegramDriver,
@@ -12,4 +13,5 @@ export default new Object({
   twitter: TwitterDriver,
   linkedin: LinkedinDriver,
   facebook: FacebookDriver,
+  eitaa: EitaaDriver,
 })
