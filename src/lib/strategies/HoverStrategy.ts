@@ -25,13 +25,11 @@ export default class HoverStrategy extends DropdownStrategy{
       const bCR = this.sharee.targetElement.getBoundingClientRect();
       const x = bCR.x;
       const y = bCR.y;
-      if (this.sharee.lang.Direction === 'ltr') {
-        this.shareeEl.style.left = `${x + (bCR.width / 2)}px`;
-        this.shareeEl.style.right = 'unset';
-      } else {
-        this.shareeEl.style.right = `${x}px`;
-        this.shareeEl.style.left = 'unset';
-      }
+      const shareeElWidth = this.shareeEl.getBoundingClientRect().width
+      const finalX = Math.max(Math.min(x + (bCR.width / 2), window.innerWidth - shareeElWidth / 2), shareeElWidth / 2)
+      console.log(window.innerWidth, shareeElWidth)
+      this.shareeEl.style.left = `${finalX}px`;
+      this.shareeEl.style.right = 'unset';
       this.shareeEl.style.top = `${y + bCR.height}px`;
     })
   }
