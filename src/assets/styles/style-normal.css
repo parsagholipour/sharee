@@ -24,7 +24,7 @@
 
 .sharee__normal > * {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     background: white;
     padding-top: 3px;
