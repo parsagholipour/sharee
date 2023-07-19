@@ -17,6 +17,6 @@ export default class WhatsappDriver extends Driver implements hasLink {
   }
 
   getLink(): string {
-    return `whatsapp://send?text=${this.options?.shareText} \n ${this.options?.shareLink}`
+    return `https://wa.me?text=${this.options?.shareText} \n ${this.options?.shareLink}`
   }
 }
