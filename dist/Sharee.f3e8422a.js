@@ -10,13 +10,13 @@ const p = {
   drivers: ["copy", "telegram", "facebook", "whatsapp", "twitter", "linkedin"],
   ripple: !0,
   mode: "normal"
-}, g = "rtl", E = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0644\u06AF\u0631\u0627\u0645", f = "\u06A9\u067E\u06CC \u0644\u06CC\u0646\u06A9", C = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u06A9\u067E\u06CC \u0634\u062F!", L = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0648\u0627\u062A\u0633\u0627\u067E", v = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0648\u06CC\u06CC\u062A\u0631", w = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0644\u06CC\u0646\u06A9\u062F\u06CC\u0646", x = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0641\u06CC\u0633\u0628\u0648\u06A9", y = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0627\u06CC\u062A\u0627", h = {
+}, g = "rtl", E = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0644\u06AF\u0631\u0627\u0645", f = "\u06A9\u067E\u06CC \u0644\u06CC\u0646\u06A9", C = "\u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u06A9\u067E\u06CC \u0634\u062F!", v = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0648\u0627\u062A\u0633\u0627\u067E", L = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0648\u06CC\u06CC\u062A\u0631", w = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0644\u06CC\u0646\u06A9\u062F\u06CC\u0646", x = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0641\u06CC\u0633\u0628\u0648\u06A9", y = "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0627\u06CC\u062A\u0627", h = {
   Direction: g,
   Telegram: E,
   Copy_Link: f,
   CopiedSuccessfully: C,
-  Whatsapp: L,
-  Twitter: v,
+  Whatsapp: v,
+  Twitter: L,
   Linkedin: w,
   Facebook: x,
   Eitaa: y
@@ -26,8 +26,8 @@ const p = {
   Telegram: E,
   Copy_Link: f,
   CopiedSuccessfully: C,
-  Whatsapp: L,
-  Twitter: v,
+  Whatsapp: v,
+  Twitter: L,
   Linkedin: w,
   Facebook: x,
   Eitaa: y,
@@ -388,11 +388,15 @@ class O extends d {
     }));
   }
   renderDriver(e) {
-    e.mainEl = document.createElement("a"), "getLink" in e && (e.mainEl.href = e.getLink()), this.initDriverStyles(e);
+    e.mainEl = document.createElement("a"), "getLink" in e && (e.mainEl.href = e.getLink()), this.initDriverStyles(e), this.listenDriverEvents(e);
     const t = document.createElement("div");
     t.innerHTML = e.icon;
     const i = document.createElement("div");
     return i.innerHTML = e.getButtonText(), e.mainEl.appendChild(t), this.options.noTitle ? (e.mainEl.title = e.getButtonText(), e.mainEl.classList.add("sharee__no-title")) : e.mainEl.appendChild(i), e.mainEl.classList.add("sharee__driver__" + e.getName()), e.mainEl;
+  }
+  listenDriverEvents(e) {
+    const t = this.onDriverClick(e);
+    this.driverListeners[e.buttonText] = [t], e.mainEl.addEventListener("click", t);
   }
 }
 class z extends u {
@@ -502,7 +506,7 @@ class P extends a {
   }
   getLink() {
     var e, t;
-    return `whatsapp://send?text=${(e = this.options) == null ? void 0 : e.shareText} 
+    return `https://wa.me?text=${(e = this.options) == null ? void 0 : e.shareText} 
  ${(t = this.options) == null ? void 0 : t.shareLink}`;
   }
 }
@@ -561,16 +565,16 @@ class W extends a {
   }
   getLink() {
     var e, t;
-    return `https://twitter.com/share?text=${encodeURIComponent((e = this.options) == null ? void 0 : e.shareText)}&url=${(t = this.options) == null ? void 0 : t.shareLink}`;
+    return `https://twitter.com/intent/tweet?text=${encodeURIComponent((e = this.options) == null ? void 0 : e.shareText)}&url=${(t = this.options) == null ? void 0 : t.shareLink}`;
   }
 }
-const U = `<svg fill="currentColor" width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"/></svg>\r
+const A = `<svg fill="currentColor" width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"/></svg>\r
 `;
-class A extends a {
+class U extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "Linkedin");
-    n(this, "icon", U);
+    n(this, "icon", A);
     n(this, "backgroundColor", "#0077B5");
     n(this, "backgroundHoverColor", "#026092");
     n(this, "textColor", "#fff");
@@ -578,7 +582,7 @@ class A extends a {
   }
   getLink() {
     var e;
-    return `https://www.linkedin.com/sharing/share-offsite/?url=${(e = this.options) == null ? void 0 : e.shareLink}`;
+    return `https://www.linkedin.com/shareArticle?url=${(e = this.options) == null ? void 0 : e.shareLink}`;
   }
 }
 const X = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\r
@@ -597,7 +601,7 @@ class G extends a {
   }
   getLink() {
     var e, t;
-    return `https://twitter.com/share?text=${encodeURIComponent((e = this.options) == null ? void 0 : e.shareText)}&url=${(t = this.options) == null ? void 0 : t.shareLink}`;
+    return `https://facebook.com/sharer/sharer.php?u=${(e = this.options) == null ? void 0 : e.shareLink}&t=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
   }
 }
 const q = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2.4 -2.4 28.80 28.80" role="img">\r
@@ -627,7 +631,7 @@ const J = new Object({
   whatsapp: P,
   copy: F,
   twitter: W,
-  linkedin: A,
+  linkedin: U,
   facebook: G,
   eitaa: Z
 });

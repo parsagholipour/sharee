@@ -120,6 +120,7 @@ export default class FixedStrategy extends BaseStrategy {
       driver.mainEl.href = driver.getLink();
     }
     this.initDriverStyles(driver);
+    this.listenDriverEvents(driver);
     const icon = document.createElement('div');
     icon.innerHTML = driver.icon;
     const text = document.createElement('div');
@@ -134,5 +135,11 @@ export default class FixedStrategy extends BaseStrategy {
     driver.mainEl.classList.add('sharee__driver__' + driver.getName())
 
     return driver.mainEl;
+  }
+
+  protected listenDriverEvents(driver: Driver) {
+    const onDriverClick = this.onDriverClick(driver)
+    this.driverListeners[driver.buttonText] = [onDriverClick]
+    driver.mainEl!.addEventListener('click', onDriverClick);
   }
 }
