@@ -17,6 +17,6 @@ export default class LinkedinDriver extends Driver implements hasLink {
   }
 
   getLink(): string {
-    return `https://www.linkedin.com/sharing/share-offsite/?url=${this.options?.shareLink}`
+    return `https://www.linkedin.com/shareArticle?url=${this.options?.shareLink}`
   }
 }

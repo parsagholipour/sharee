@@ -17,6 +17,6 @@ export default class TwitterDriver extends Driver implements hasLink {
   }
 
   getLink(): string {
-    return `https://twitter.com/share?text=${encodeURIComponent(this.options?.shareText!)}&url=${this.options?.shareLink}`
+    return `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.options?.shareText!)}&url=${this.options?.shareLink}`
   }
 }
