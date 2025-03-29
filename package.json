@@ -1,7 +1,7 @@
 {
   "name": "sharee",
   "private": false,
-  "version": "1.1.15",
+  "version": "1.1.16",
   "browser": "./dist/sharee.min.js",
   "main": "./dist/build.js",
   "module": "./dist/build.js",
@@ -20,15 +20,15 @@
     "./styles": "./dist/style.css"
   },
   "devDependencies": {
-    "@types/lodash.merge": "^4.6.7",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    "@vitejs/plugin-vue": "^3.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@types/lodash.merge": "^4.6.9",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "typescript": "^4.6.4",
-    "vite": "^3.0.0",
+    "vite": "^6.2.3",
     "vue": "^3.2.39",
     "vue-tsc": "^0.40.13"
   },

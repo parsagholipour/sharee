@@ -1,16 +1,13 @@
-import { useRef as o, useEffect as u } from "react";
-import { S as f } from "./Sharee.36f210a1.js";
-import { jsx as s } from "react/jsx-runtime";
-import "lodash.merge";
-function l(r) {
-  const e = o(null), t = o(null);
-  return u(() => (t.current = new f(e.current, r), () => {
+import { jsx as o } from "react/jsx-runtime";
+import { useRef as u, useEffect as f } from "react";
+import { S as s } from "./Sharee-SHsZheQr.js";
+function m(e) {
+  const r = u(null), t = u(null);
+  return f(() => (t.current = new s(r.current, e), () => {
     var n;
     (n = t.current) == null || n.destroy();
-  }), [r]), /* @__PURE__ */ s("div", {
-    ref: e
-  });
+  }), [e]), /* @__PURE__ */ o("div", { ref: r });
 }
 export {
-  l as default
+  m as default
 };
