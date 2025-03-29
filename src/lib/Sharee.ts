@@ -4,9 +4,9 @@ import fa from '../locales/fa.json';
 import Lang from "../common/Lang";
 import BaseStrategy from "./strategies/BaseStrategy";
 import strategies from "./strategies";
-import merge from 'lodash.merge'
-import '../assets/styles/style.css'
-import drivers from './drivers'
+import merge from 'lodash.merge';
+import '../assets/styles/style.css';
+import drivers from './drivers';
 import Driver from "./drivers/Driver";
 
 export default class Sharee {

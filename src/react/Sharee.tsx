@@ -7,14 +7,12 @@ export default function Sharee(props: ShareeOptions) {
   const sharee = useRef<ShareeClass|null>(null)
 
   useEffect(() => {
-    return () => {
-      if (sharee.current) {
-        sharee.current.destroy();
-      }
-      sharee.current = new ShareeClass(shareeEl.current!, props)
-    };
-  }, [props]);
+    sharee.current = new ShareeClass(shareeEl.current!, props);
 
+    return () => {
+      sharee.current?.destroy()
+    }
+  }, [props]);
 
   return <div ref={shareeEl} />
 }

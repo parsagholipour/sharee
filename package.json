@@ -1,7 +1,7 @@
 {
   "name": "sharee",
   "private": false,
-  "version": "1.1.13",
+  "version": "1.1.14",
   "browser": "./dist/sharee.min.js",
   "main": "./dist/build.js",
   "module": "./dist/build.js",
@@ -60,6 +60,11 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/parsagholipour/sharee-js/issues"
+  },
+  "peerDependencies": {
+    "@mui/material": "*",
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
   },
   "homepage": "https://github.com/parsagholipour/sharee-js#readme"
 }

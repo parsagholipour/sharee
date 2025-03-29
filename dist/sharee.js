@@ -1,5 +1,9 @@
-import { S as a } from "./Sharee.f3e8422a.js";
+import { S as l } from "./Sharee.36f210a1.js";
+import { default as c } from "./sharee-react.js.js";
 import "lodash.merge";
+import "react";
+import "react/jsx-runtime";
 export {
-  a as default
+  c as ShareeReact,
+  l as default
 };

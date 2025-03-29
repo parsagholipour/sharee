@@ -5,7 +5,6 @@ import Sharee from "./lib/Sharee";
 import initVue from './vue/main';
 import initReact from './react/main';
 import TelegramDriver from "./lib/drivers/TelegramDriver";
-import TelegramSvg from "*?raw";
 
 if (document.location.pathname === '/vue') {
   initVue();
