@@ -1,0 +1,16 @@
+.sharee__text.sharee__dropdown {
+    min-width: unset;
+    left: -1000px;
+}
+
+.sharee__text.sharee__dropdown > * {
+    padding: 0 4px 0 4px;
+}
+
+.sharee__dropdown.sharee__text > * > *:first-child {
+    margin-inline-end: unset;
+}
+
+.sharee__text.sharee__dropdown svg {
+    vertical-align: middle;
+}
