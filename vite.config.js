@@ -16,8 +16,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         'sharee': resolve(__dirname, 'src/build.ts'),
-        'sharee-vue.js': resolve(__dirname, 'src/vue/Sharee.vue'),
-        'sharee-react.js': resolve(__dirname, 'src/react/Sharee.tsx')
+        'sharee-vue': resolve(__dirname, 'src/vue/Sharee.vue'),
+        'sharee-react': resolve(__dirname, 'src/react/Sharee.tsx')
       },
       // make sure to externalize deps that shouldn't be bundled
       // into your library
