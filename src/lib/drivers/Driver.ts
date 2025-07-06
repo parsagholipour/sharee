@@ -20,6 +20,7 @@ export default abstract class Driver {
   }
 
   public getButtonText() {
+    console.log('this.lang', this.lang)
     // @ts-ignore
     return this.lang[this.buttonText.replaceAll(' ', '_')] || this.buttonText;
   }

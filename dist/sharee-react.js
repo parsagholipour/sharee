@@ -1,6 +1,6 @@
 import { jsx as o } from "react/jsx-runtime";
 import { useRef as u, useEffect as f } from "react";
-import { S as s } from "./Sharee-SHsZheQr.js";
+import { S as s } from "./Sharee-rEgL7L0V.js";
 function m(e) {
   const r = u(null), t = u(null);
   return f(() => (t.current = new s(r.current, e), () => {

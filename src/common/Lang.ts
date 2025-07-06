@@ -4,6 +4,6 @@ export default interface Lang {
   Telegram?: string,
   Copy_Link?: string,
   Whatsapp?: string,
-  Twitter?: string,
+  'X_com'?: string,
   Linkedin?: string
 }

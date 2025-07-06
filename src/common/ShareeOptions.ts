@@ -18,7 +18,7 @@ const shareeDefaultOptions: ShareeOptions = {
   showTransitionDuration: '200ms',
   lang: 'fa',
   onLoad: () => {},
-  drivers: ['copy', 'telegram', 'facebook', 'whatsapp', 'twitter', 'linkedin'],
+  drivers: ['copy', 'telegram', 'facebook', 'whatsapp', 'x', 'linkedin'],
   ripple: true,
   mode: 'normal'
 }

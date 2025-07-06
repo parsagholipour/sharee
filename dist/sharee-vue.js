@@ -1,5 +1,5 @@
 import { defineComponent as t, ref as o, onMounted as u, onUnmounted as s, createElementBlock as p, openBlock as i } from "vue";
-import { S as c } from "./Sharee-SHsZheQr.js";
+import { S as c } from "./Sharee-rEgL7L0V.js";
 const f = /* @__PURE__ */ t({
   __name: "Sharee",
   props: {
