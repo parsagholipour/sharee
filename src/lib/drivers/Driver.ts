@@ -20,16 +20,32 @@ export default abstract class Driver {
   }
 
   public getButtonText() {
-    console.log('this.lang', this.lang)
     // @ts-ignore
     return this.lang[this.buttonText.replaceAll(' ', '_')] || this.buttonText;
   }
 
   public onClick(_e: MouseEvent) {
-    //
+    const event = new CustomEvent('driver-clicked', {
+      detail: {
+        name: this.getName(),
+        link: this.getLink(),
+        originalEvent: _e,
+      },
+      bubbles: true,
+      composed: true,
+    });
+    this.options?.targetElement.dispatchEvent(event);
   }
 
   public getName() {
     return this.constructor.name
+  }
+
+  getLink(): string | undefined {
+    return undefined;
+  }
+
+  public hasLink() {
+    return this.getLink() !== undefined;
   }
 }

@@ -129,9 +129,10 @@ export default class DropdownStrategy extends BaseStrategy{
       const driverClass = this.resolveDriver(driverName)
       const driver: Driver = new driverClass(this.sharee.lang, {
         lang: this.sharee.lang,
+        targetElement: this.sharee.targetElement,
         shareText: this.sharee.getShareText(),
         shareLink: this.sharee.getShareLink(),
-        ripple: this.sharee.options.ripple!
+        ripple: this.sharee.options.ripple!,
       });
       const driverEl = this.renderDriver(driver);
       this.shareeEl.appendChild(driverEl);
@@ -190,7 +191,7 @@ export default class DropdownStrategy extends BaseStrategy{
 
   public renderDriver(driver: Driver) {
     driver.mainEl = document.createElement('a');
-    if ('getLink' in driver) {
+    if ('hasLink' in driver && driver.hasLink()) {
       // @ts-ignore
       driver.mainEl.href = driver.getLink();
     }

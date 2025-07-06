@@ -12,6 +12,7 @@ export default interface ShareeOptions {
   ripple?: boolean;
   mode?: 'dropdown'|'text'|'normal'|'fixed'|'hover';
   modeOptions?: any;
+  onDriverClick?: (e: any) => void;
 }
 
 const shareeDefaultOptions: ShareeOptions = {

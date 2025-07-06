@@ -43,6 +43,19 @@ export default class Sharee {
     // @ts-ignore
     this.targetElement.sharee = this;
     await this.setLang(this.options.lang!, this.options.langs);
+    this.initEventListeners();
+  }
+
+  protected initEventListeners() {
+    if (this.options?.onDriverClick) {
+      this.targetElement.addEventListener('driver-clicked', this.options.onDriverClick!);
+    }
+  }
+
+  protected destroyEventListeners() {
+    if (this.options?.onDriverClick) {
+      this.targetElement.removeEventListener('driver-clicked', this.options.onDriverClick!);
+    }
   }
 
   protected async setLang(langName: LangName, customLangs: {[key: string]: Lang} = {}) {
@@ -70,10 +83,11 @@ export default class Sharee {
   }
 
   public getShareLink() {
-    return this.options.shareLink || window.location.href
+    return this.options.shareLink || window.location.href;
   }
 
   public destroy() {
-    this.strategy.destroy()
+    this.strategy.destroy();
+    this.destroyEventListeners();
   }
 }

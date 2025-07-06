@@ -61,6 +61,7 @@ export default class FixedStrategy extends BaseStrategy {
       const driverClass = this.resolveDriver(driverName)
       const driver: Driver = new driverClass(this.sharee.lang, {
         lang: this.sharee.lang,
+        targetElement: this.sharee.targetElement,
         shareText: this.sharee.getShareText(),
         shareLink: this.sharee.getShareLink(),
         ripple: this.sharee.options.ripple!
@@ -89,6 +90,8 @@ export default class FixedStrategy extends BaseStrategy {
 
   protected onDriverClick(driver: Driver) {
     return (e: MouseEvent) => {
+      if (e.defaultPrevented)
+        return;
       driver.onClick(e);
     }
   }
@@ -115,7 +118,7 @@ export default class FixedStrategy extends BaseStrategy {
 
   public renderDriver(driver: Driver) {
     driver.mainEl = document.createElement('a');
-    if ('getLink' in driver) {
+    if (driver.hasLink()) {
       // @ts-ignore
       driver.mainEl.href = driver.getLink();
     }

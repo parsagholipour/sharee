@@ -48,7 +48,7 @@ export default class HoverStrategy extends DropdownStrategy{
   public renderDriver(driver: Driver) {
     driver.mainEl = document.createElement('a');
     driver.mainEl.title = driver.getButtonText()
-    if ('getLink' in driver) {
+    if (driver.hasLink()) {
       // @ts-ignore
       driver.mainEl.href = driver.getLink();
     }

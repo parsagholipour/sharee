@@ -71,7 +71,7 @@ if (document.location.pathname === '/vue') {
 
   new Sharee(document.querySelector('#sharee-normal')!, {
     mode: 'normal',
-    lang: 'en'
+    lang: 'en',
   });
 
   new Sharee(document.querySelector('#sharee-hover')!, {

@@ -18,6 +18,8 @@ export default class CopyDriver extends Driver {
 
   public onClick(e: MouseEvent) {
     super.onClick(e);
+    if (e.defaultPrevented)
+      return;
     const successText = this.lang['CopiedSuccessfully']
     const el: HTMLElement = e.currentTarget! as HTMLElement;
     const textEl: HTMLElement = el.querySelector('div:nth-child(2)')!
