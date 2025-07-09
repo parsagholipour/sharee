@@ -513,7 +513,7 @@ const P = `<?xml version="1.0" encoding="iso-8859-1"?>\r
 </svg>\r
 \r
 `;
-class X extends a {
+class N extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "Whatsapp");
@@ -529,14 +529,14 @@ class X extends a {
  ${(t = this.options) == null ? void 0 : t.shareLink}`;
   }
 }
-const N = `\r
+const X = `\r
 <svg style="transform:scale(0.83)" fill="currentColor" width="512px" height="512px" viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg>\r
 `;
 class j extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "Copy Link");
-    n(this, "icon", N);
+    n(this, "icon", X);
     n(this, "backgroundColor", "#797979");
     n(this, "backgroundHoverColor", "#5e5e5e");
     n(this, "textColor", "#fff");
@@ -573,7 +573,7 @@ class E extends a {
   }
   getLink() {
     var e, t;
-    return `https://X_com/intent/post?text=${encodeURIComponent((e = this.options) == null ? void 0 : e.shareText)}&url=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareLink)}`;
+    return `https://x.com/intent/post?text=${encodeURIComponent((e = this.options) == null ? void 0 : e.shareText)}&url=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareLink)}`;
   }
 }
 const W = `<svg fill="currentColor" width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 8.6425781 4 C 7.1835781 4 6 5.181625 6 6.640625 C 6 8.099625 7.182625 9.3085938 8.640625 9.3085938 C 10.098625 9.3085938 11.283203 8.099625 11.283203 6.640625 C 11.283203 5.182625 10.101578 4 8.6425781 4 z M 21.535156 11 C 19.316156 11 18.0465 12.160453 17.4375 13.314453 L 17.373047 13.314453 L 17.373047 11.310547 L 13 11.310547 L 13 26 L 17.556641 26 L 17.556641 18.728516 C 17.556641 16.812516 17.701266 14.960938 20.072266 14.960938 C 22.409266 14.960937 22.443359 17.145609 22.443359 18.849609 L 22.443359 26 L 26.994141 26 L 27 26 L 27 17.931641 C 27 13.983641 26.151156 11 21.535156 11 z M 6.3632812 11.310547 L 6.3632812 26 L 10.923828 26 L 10.923828 11.310547 L 6.3632812 11.310547 z"/></svg>\r
@@ -636,7 +636,7 @@ class Z extends a {
 }
 const J = new Object({
   telegram: V,
-  whatsapp: X,
+  whatsapp: N,
   copy: j,
   x: E,
   twitter: E,

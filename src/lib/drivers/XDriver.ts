@@ -17,6 +17,6 @@ export default class XDriver extends Driver implements hasLink {
   }
 
   getLink(): string {
-    return `https://X_com/intent/post?text=${encodeURIComponent(this.options?.shareText!)}&url=${encodeURIComponent(this.options?.shareLink!)}`
+    return `https://x.com/intent/post?text=${encodeURIComponent(this.options?.shareText!)}&url=${encodeURIComponent(this.options?.shareLink!)}`
   }
 }
