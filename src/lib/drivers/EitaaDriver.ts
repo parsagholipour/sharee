@@ -17,6 +17,6 @@ export default class TelegramDriver extends Driver implements hasLink {
   }
 
   getLink(): string {
-    return `https://eitaa.com/share/url?url=${this.options?.shareLink}&text=${encodeURIComponent(this.options?.shareText!)}`
+    return `https://eitaa.com/share/url?url=${encodeURIComponent(this.options?.shareLink ?? '')}&text=${encodeURIComponent(this.options?.shareText!)}`
   }
 }

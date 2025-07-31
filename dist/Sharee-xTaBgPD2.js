@@ -1,6 +1,6 @@
 var D = Object.defineProperty;
-var b = (r, s, e) => s in r ? D(r, s, { enumerable: !0, configurable: !0, writable: !0, value: e }) : r[s] = e;
-var n = (r, s, e) => b(r, typeof s != "symbol" ? s + "" : s, e);
+var b = (o, s, e) => s in o ? D(o, s, { enumerable: !0, configurable: !0, writable: !0, value: e }) : o[s] = e;
+var n = (o, s, e) => b(o, typeof s != "symbol" ? s + "" : s, e);
 import l from "lodash.merge";
 const p = {
   showTransitionDuration: "200ms",
@@ -10,11 +10,11 @@ const p = {
   drivers: ["copy", "telegram", "facebook", "whatsapp", "x", "linkedin"],
   ripple: !0,
   mode: "normal"
-}, g = "rtl", f = "اشتراک در تلگرام", v = "کپی لینک", C = "با موفقیت کپی شد!", L = "اشتراک در واتساپ", w = "اکس", x = "اشتراک در لینکدین", k = "اشتراک در فیسبوک", y = "اشتراک در ایتا", h = {
+}, g = "rtl", C = "اشتراک در تلگرام", f = "کپی لینک", v = "با موفقیت کپی شد!", L = "اشتراک در واتساپ", w = "اکس", x = "اشتراک در لینکدین", k = "اشتراک در فیسبوک", y = "اشتراک در ایتا", h = {
   Direction: g,
-  Telegram: f,
-  Copy_Link: v,
-  CopiedSuccessfully: C,
+  Telegram: C,
+  Copy_Link: f,
+  CopiedSuccessfully: v,
   Whatsapp: L,
   X_com: w,
   Linkedin: x,
@@ -22,13 +22,13 @@ const p = {
   Eitaa: y
 }, _ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  CopiedSuccessfully: C,
-  Copy_Link: v,
+  CopiedSuccessfully: v,
+  Copy_Link: f,
   Direction: g,
   Eitaa: y,
   Facebook: k,
   Linkedin: x,
-  Telegram: f,
+  Telegram: C,
   Whatsapp: L,
   X_com: w,
   default: h
@@ -119,8 +119,8 @@ class u extends d {
         shareText: this.sharee.getShareText(),
         shareLink: this.sharee.getShareLink(),
         ripple: this.sharee.options.ripple
-      }), o = this.renderDriver(i);
-      this.shareeEl.appendChild(o);
+      }), r = this.renderDriver(i);
+      this.shareeEl.appendChild(r);
     }
     document.body.appendChild(this.shareeEl), this.listenEvents(), this.options.type === "grid" ? this.shareeEl.classList.add("sharee__dropdown__grid") : this.options.type === "row" && this.shareeEl.classList.add("sharee__dropdown__row");
   }
@@ -158,17 +158,17 @@ class u extends d {
     return i.innerHTML = e.getButtonText(), e.mainEl.appendChild(t), e.mainEl.appendChild(i), e.mainEl;
   }
   listenDriverEvents(e) {
-    const t = this.onDriverMouseEnter(e), i = this.onDriverMouseLeave(e), o = this.onDriverClick(e);
-    this.driverListeners[e.buttonText] = [t, i, o], e.mainEl.addEventListener("mouseenter", t), e.mainEl.addEventListener("mouseleave", i), e.mainEl.addEventListener("click", o);
+    const t = this.onDriverMouseEnter(e), i = this.onDriverMouseLeave(e), r = this.onDriverClick(e);
+    this.driverListeners[e.buttonText] = [t, i, r], e.mainEl.addEventListener("mouseenter", t), e.mainEl.addEventListener("mouseleave", i), e.mainEl.addEventListener("click", r);
   }
 }
-function m(r, s) {
+function m(o, s) {
   var e, t;
   do {
-    if (typeof ((e = r == null ? void 0 : r.className) == null ? void 0 : e.includes) < "u" && ((t = r == null ? void 0 : r.className) != null && t.includes(s)))
+    if (typeof ((e = o == null ? void 0 : o.className) == null ? void 0 : e.includes) < "u" && ((t = o == null ? void 0 : o.className) != null && t.includes(s)))
       return !0;
-    r = r.parentNode;
-  } while (r);
+    o = o.parentNode;
+  } while (o);
   return !1;
 }
 class H extends u {
@@ -289,8 +289,8 @@ class R extends d {
         shareText: this.sharee.getShareText(),
         shareLink: this.sharee.getShareLink(),
         ripple: this.sharee.options.ripple
-      }), o = this.renderDriver(i);
-      this.shareeEl.appendChild(o);
+      }), r = this.renderDriver(i);
+      this.shareeEl.appendChild(r);
     }
     this.sharee.targetElement.appendChild(this.shareeEl);
   }
@@ -359,8 +359,8 @@ class O extends d {
         shareText: this.sharee.getShareText(),
         shareLink: this.sharee.getShareLink(),
         ripple: this.sharee.options.ripple
-      }), o = this.renderDriver(i);
-      this.shareeEl.appendChild(o);
+      }), r = this.renderDriver(i);
+      this.shareeEl.appendChild(r);
     }
     document.body.appendChild(this.shareeEl);
   }
@@ -415,8 +415,8 @@ class B extends u {
   show() {
     this.shareeEl.classList.add("showing"), setTimeout(() => {
       this.shareeEl.classList.add("show");
-      const s = this.sharee.targetElement.getBoundingClientRect(), e = s.x, t = s.y, i = this.shareeEl.getBoundingClientRect().width, o = Math.max(Math.min(e + s.width / 2, window.innerWidth - i / 2), i / 2);
-      console.log(window.innerWidth, i), this.shareeEl.style.left = `${o}px`, this.shareeEl.style.right = "unset", this.shareeEl.style.top = `${t + s.height}px`;
+      const s = this.sharee.targetElement.getBoundingClientRect(), e = s.x, t = s.y, i = this.shareeEl.getBoundingClientRect().width, r = Math.max(Math.min(e + s.width / 2, window.innerWidth - i / 2), i / 2);
+      console.log(window.innerWidth, i), this.shareeEl.style.left = `${r}px`, this.shareeEl.style.right = "unset", this.shareeEl.style.top = `${t + s.height}px`;
     });
   }
   listenEvents() {
@@ -430,7 +430,7 @@ class B extends u {
     return e.innerHTML = s.icon, s.mainEl.appendChild(e), s.mainEl;
   }
 }
-const $ = {
+const I = {
   dropdown: u,
   text: H,
   normal: R,
@@ -471,13 +471,13 @@ class a {
     return this.getLink() !== void 0;
   }
 }
-const I = `<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path d="M 20.302734 2.984375 C 20.013769 2.996945 19.748583 3.080055 19.515625 3.171875 C 19.300407 3.256634 18.52754 3.5814726 17.296875 4.0976562 C 16.06621 4.61384 14.435476 5.2982348 12.697266 6.0292969 C 9.2208449 7.4914211 5.314238 9.1361259 3.3125 9.9785156 C 3.243759 10.007156 2.9645852 10.092621 2.65625 10.328125 C 2.3471996 10.564176 2.0039062 11.076462 2.0039062 11.636719 C 2.0039062 12.088671 2.2295201 12.548966 2.5019531 12.8125 C 2.7743861 13.076034 3.0504903 13.199244 3.28125 13.291016 L 3.28125 13.289062 C 4.0612776 13.599827 6.3906939 14.531938 6.9453125 14.753906 C 7.1420423 15.343433 7.9865895 17.867278 8.1875 18.501953 L 8.1855469 18.501953 C 8.3275588 18.951162 8.4659791 19.243913 8.6582031 19.488281 C 8.7543151 19.610465 8.8690398 19.721184 9.0097656 19.808594 C 9.0637596 19.842134 9.1235454 19.868148 9.1835938 19.892578 C 9.191962 19.896131 9.2005867 19.897012 9.2089844 19.900391 L 9.1855469 19.894531 C 9.2029579 19.901531 9.2185841 19.911859 9.2363281 19.917969 C 9.2652427 19.927926 9.2852873 19.927599 9.3242188 19.935547 C 9.4612233 19.977694 9.5979794 20.005859 9.7246094 20.005859 C 10.26822 20.005859 10.601562 19.710937 10.601562 19.710938 L 10.623047 19.695312 L 12.970703 17.708984 L 15.845703 20.369141 C 15.898217 20.443289 16.309604 21 17.261719 21 C 17.829844 21 18.279025 20.718791 18.566406 20.423828 C 18.853787 20.128866 19.032804 19.82706 19.113281 19.417969 L 19.115234 19.416016 C 19.179414 19.085834 21.931641 5.265625 21.931641 5.265625 L 21.925781 5.2890625 C 22.011441 4.9067171 22.036735 4.5369631 21.935547 4.1601562 C 21.834358 3.7833495 21.561271 3.4156252 21.232422 3.2226562 C 20.903572 3.0296874 20.591699 2.9718046 20.302734 2.984375 z M 19.908203 5.1738281 C 19.799442 5.7198576 17.33401 18.105877 17.181641 18.882812 L 13.029297 15.041016 L 10.222656 17.414062 L 11 14.375 C 11 14.375 16.362547 8.9468594 16.685547 8.6308594 C 16.945547 8.3778594 17 8.2891719 17 8.2011719 C 17 8.0841719 16.939781 8 16.800781 8 C 16.675781 8 16.506016 8.1197812 16.416016 8.1757812 C 15.272368 8.8887854 10.401283 11.664685 8.0058594 13.027344 C 7.8617016 12.96954 5.6973962 12.100458 4.53125 11.634766 C 6.6055146 10.76177 10.161156 9.2658083 13.472656 7.8730469 C 15.210571 7.142109 16.840822 6.4570977 18.070312 5.9414062 C 19.108158 5.5060977 19.649538 5.2807035 19.908203 5.1738281 z M 17.152344 19.025391 C 17.152344 19.025391 17.154297 19.025391 17.154297 19.025391 C 17.154252 19.025621 17.152444 19.03095 17.152344 19.03125 C 17.153615 19.024789 17.15139 19.03045 17.152344 19.025391 z"/></svg>\r
+const $ = `<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path d="M 20.302734 2.984375 C 20.013769 2.996945 19.748583 3.080055 19.515625 3.171875 C 19.300407 3.256634 18.52754 3.5814726 17.296875 4.0976562 C 16.06621 4.61384 14.435476 5.2982348 12.697266 6.0292969 C 9.2208449 7.4914211 5.314238 9.1361259 3.3125 9.9785156 C 3.243759 10.007156 2.9645852 10.092621 2.65625 10.328125 C 2.3471996 10.564176 2.0039062 11.076462 2.0039062 11.636719 C 2.0039062 12.088671 2.2295201 12.548966 2.5019531 12.8125 C 2.7743861 13.076034 3.0504903 13.199244 3.28125 13.291016 L 3.28125 13.289062 C 4.0612776 13.599827 6.3906939 14.531938 6.9453125 14.753906 C 7.1420423 15.343433 7.9865895 17.867278 8.1875 18.501953 L 8.1855469 18.501953 C 8.3275588 18.951162 8.4659791 19.243913 8.6582031 19.488281 C 8.7543151 19.610465 8.8690398 19.721184 9.0097656 19.808594 C 9.0637596 19.842134 9.1235454 19.868148 9.1835938 19.892578 C 9.191962 19.896131 9.2005867 19.897012 9.2089844 19.900391 L 9.1855469 19.894531 C 9.2029579 19.901531 9.2185841 19.911859 9.2363281 19.917969 C 9.2652427 19.927926 9.2852873 19.927599 9.3242188 19.935547 C 9.4612233 19.977694 9.5979794 20.005859 9.7246094 20.005859 C 10.26822 20.005859 10.601562 19.710937 10.601562 19.710938 L 10.623047 19.695312 L 12.970703 17.708984 L 15.845703 20.369141 C 15.898217 20.443289 16.309604 21 17.261719 21 C 17.829844 21 18.279025 20.718791 18.566406 20.423828 C 18.853787 20.128866 19.032804 19.82706 19.113281 19.417969 L 19.115234 19.416016 C 19.179414 19.085834 21.931641 5.265625 21.931641 5.265625 L 21.925781 5.2890625 C 22.011441 4.9067171 22.036735 4.5369631 21.935547 4.1601562 C 21.834358 3.7833495 21.561271 3.4156252 21.232422 3.2226562 C 20.903572 3.0296874 20.591699 2.9718046 20.302734 2.984375 z M 19.908203 5.1738281 C 19.799442 5.7198576 17.33401 18.105877 17.181641 18.882812 L 13.029297 15.041016 L 10.222656 17.414062 L 11 14.375 C 11 14.375 16.362547 8.9468594 16.685547 8.6308594 C 16.945547 8.3778594 17 8.2891719 17 8.2011719 C 17 8.0841719 16.939781 8 16.800781 8 C 16.675781 8 16.506016 8.1197812 16.416016 8.1757812 C 15.272368 8.8887854 10.401283 11.664685 8.0058594 13.027344 C 7.8617016 12.96954 5.6973962 12.100458 4.53125 11.634766 C 6.6055146 10.76177 10.161156 9.2658083 13.472656 7.8730469 C 15.210571 7.142109 16.840822 6.4570977 18.070312 5.9414062 C 19.108158 5.5060977 19.649538 5.2807035 19.908203 5.1738281 z M 17.152344 19.025391 C 17.152344 19.025391 17.154297 19.025391 17.154297 19.025391 C 17.154252 19.025621 17.152444 19.03095 17.152344 19.03125 C 17.153615 19.024789 17.15139 19.03045 17.152344 19.025391 z"/></svg>\r
 `;
-let V = class extends a {
+let U = class extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "Telegram");
-    n(this, "icon", I);
+    n(this, "icon", $);
     n(this, "backgroundColor", "#0088CC");
     n(this, "backgroundHoverColor", "#0371aa");
     n(this, "textColor", "#fff");
@@ -485,10 +485,10 @@ let V = class extends a {
   }
   getLink() {
     var e, t;
-    return `https://telegram.me/share/url?url=${(e = this.options) == null ? void 0 : e.shareLink}&text=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
+    return `https://telegram.me/share/url?url=${encodeURIComponent(((e = this.options) == null ? void 0 : e.shareLink) ?? "")}&text=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
   }
 };
-const P = `<?xml version="1.0" encoding="iso-8859-1"?>\r
+const V = `<?xml version="1.0" encoding="iso-8859-1"?>\r
 <svg fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\r
      viewBox="0 0 308 308" style="transform:scale(0.81);enable-background:new 0 0 308 308;" xml:space="preserve">\r
 <g id="XMLID_468_">\r
@@ -513,30 +513,31 @@ const P = `<?xml version="1.0" encoding="iso-8859-1"?>\r
 </svg>\r
 \r
 `;
-class N extends a {
+class P extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "Whatsapp");
-    n(this, "icon", P);
+    n(this, "icon", V);
     n(this, "backgroundColor", "#25D366");
     n(this, "backgroundHoverColor", "#20bd5a");
     n(this, "textColor", "#fff");
     n(this, "textHoverColor", "#fff");
   }
   getLink() {
-    var e, t;
-    return `https://wa.me?text=${(e = this.options) == null ? void 0 : e.shareText} 
- ${(t = this.options) == null ? void 0 : t.shareLink}`;
+    var t, i;
+    const e = [((t = this.options) == null ? void 0 : t.shareText) ?? "", ((i = this.options) == null ? void 0 : i.shareLink) ?? ""].filter(Boolean).join(`
+`);
+    return `https://wa.me/?text=${encodeURIComponent(e)}`;
   }
 }
-const X = `\r
+const j = `\r
 <svg style="transform:scale(0.83)" fill="currentColor" width="512px" height="512px" viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg>\r
 `;
-class j extends a {
+class N extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "Copy Link");
-    n(this, "icon", X);
+    n(this, "icon", j);
     n(this, "backgroundColor", "#797979");
     n(this, "backgroundHoverColor", "#5e5e5e");
     n(this, "textColor", "#fff");
@@ -546,26 +547,26 @@ class j extends a {
   onClick(e) {
     if (super.onClick(e), e.defaultPrevented)
       return;
-    const t = this.lang.CopiedSuccessfully, o = e.currentTarget.querySelector("div:nth-child(2)");
-    if (o.innerHTML === t) {
-      o.innerHTML = this.getButtonText();
+    const t = this.lang.CopiedSuccessfully, r = e.currentTarget.querySelector("div:nth-child(2)");
+    if (r.innerHTML === t) {
+      r.innerHTML = this.getButtonText();
       return;
     }
     let T = window.location.href;
     navigator.clipboard.writeText(T).then(() => {
-      o.innerHTML = t, o.style.transition = "300ms all", o.style.transform = "scale(1)", o.style.transform = `scale(1.07) translateX(${this.lang.Direction === "rtl" ? "-" : ""}4px)`, clearTimeout(this.timeout), this.timeout = setTimeout(() => {
-        o.innerHTML = this.getButtonText(), o.style.transition = "none", o.style.transform = "scale(1)";
+      r.innerHTML = t, r.style.transition = "300ms all", r.style.transform = "scale(1)", r.style.transform = `scale(1.07) translateX(${this.lang.Direction === "rtl" ? "-" : ""}4px)`, clearTimeout(this.timeout), this.timeout = setTimeout(() => {
+        r.innerHTML = this.getButtonText(), r.style.transition = "none", r.style.transform = "scale(1)";
       }, 5e3);
     });
   }
 }
-const U = `<svg width="28px" height="28px" viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-18jsvk2 r-16y2uox r-8kz0gk"><g><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>\r
+const X = `<svg width="28px" height="28px" viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-18jsvk2 r-16y2uox r-8kz0gk"><g><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>\r
 `;
 class E extends a {
   constructor(e, t) {
     super(e, t);
     n(this, "buttonText", "X_com");
-    n(this, "icon", U);
+    n(this, "icon", X);
     n(this, "backgroundColor", "#0f1419");
     n(this, "backgroundHoverColor", "#222732");
     n(this, "textColor", "#fff");
@@ -590,7 +591,7 @@ class F extends a {
   }
   getLink() {
     var e;
-    return `https://www.linkedin.com/shareArticle?url=${(e = this.options) == null ? void 0 : e.shareLink}`;
+    return `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(((e = this.options) == null ? void 0 : e.shareLink) ?? "")}`;
   }
 }
 const A = `<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">\r
@@ -609,7 +610,7 @@ class q extends a {
   }
   getLink() {
     var e, t;
-    return `https://facebook.com/sharer/sharer.php?u=${(e = this.options) == null ? void 0 : e.shareLink}&t=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
+    return `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(((e = this.options) == null ? void 0 : e.shareLink) ?? "")}&t=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
   }
 }
 const G = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="-2.4 -2.4 28.80 28.80" role="img">\r
@@ -631,13 +632,13 @@ class Z extends a {
   }
   getLink() {
     var e, t;
-    return `https://eitaa.com/share/url?url=${(e = this.options) == null ? void 0 : e.shareLink}&text=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
+    return `https://eitaa.com/share/url?url=${encodeURIComponent(((e = this.options) == null ? void 0 : e.shareLink) ?? "")}&text=${encodeURIComponent((t = this.options) == null ? void 0 : t.shareText)}`;
   }
 }
 const J = new Object({
-  telegram: V,
-  whatsapp: N,
-  copy: j,
+  telegram: U,
+  whatsapp: P,
+  copy: N,
   x: E,
   twitter: E,
   linkedin: F,
@@ -651,7 +652,7 @@ class c {
     n(this, "strategy");
     n(this, "targetElement");
     this.targetElement = s, this.options = l({}, p, e), this.options.drivers = e.drivers || this.options.drivers;
-    const t = $[this.options.mode];
+    const t = I[this.options.mode];
     if (typeof t > "u")
       throw new Error('Selected mode "' + e.mode + '" not found');
     this.strategy = new t(this), typeof window < "u" && this.init().then(() => {
@@ -675,8 +676,8 @@ class c {
   async setLang(s, e = {}) {
     const t = /* @__PURE__ */ Object.assign({ "../locales/en.json": () => import("./en-HaJQAjs3.js"), "../locales/fa.json": () => Promise.resolve().then(() => _) });
     let i = h;
-    for (const o in t)
-      o.includes(s) && (t[o] instanceof Function ? i = { ...await t[o]() } : i = { ...t[o] }, e[s] && l(i, e[s]));
+    for (const r in t)
+      r.includes(s) && (t[r] instanceof Function ? i = { ...await t[r]() } : i = { ...t[r] }, e[s] && l(i, e[s]));
     this.lang = i;
   }
   getShareText() {

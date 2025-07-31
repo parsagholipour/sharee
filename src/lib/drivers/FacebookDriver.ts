@@ -17,6 +17,6 @@ export default class FacebookDriver extends Driver implements hasLink {
   }
 
   getLink(): string {
-    return `https://facebook.com/sharer/sharer.php?u=${this.options?.shareLink}&t=${encodeURIComponent(this.options?.shareText!)}`
+    return `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.options?.shareLink ?? '')}&t=${encodeURIComponent(this.options?.shareText!)}`
   }
 }
